@@ -1,9 +1,16 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+
 function App() {
   return (
-    <main className="app">
-      <h1>Freelance Marketplace</h1>
-      <p>Welcome to the MERN starter project.</p>
-    </main>
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/" element={<Login />} />
+      </Routes>
+    </Router>
   );
 }
 
