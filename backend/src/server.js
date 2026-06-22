@@ -5,6 +5,7 @@ const connectDB = require("./config/connectDB");
 const healthRoutes = require("./routes/healthRoutes");
 const authRoutes = require("./routes/authRoutes");
 const protectedRoutes = require("./routes/protectedRoutes");
+const roleRoutes = require("./routes/roleRoutes");
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use("/api", healthRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/protected", protectedRoutes);
+app.use("/api/roles", roleRoutes);
 
 app.get("/", (req, res) => {
   res.json({
